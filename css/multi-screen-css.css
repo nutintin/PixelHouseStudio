@@ -1,0 +1,21 @@
+/**
+ * Styles for Multi-Screen.js
+ * @author Ian de Vries <ian@ian-devries.com>
+ * @license MIT License <http://opensource.org/licenses/MIT>
+ */
+
+.ms-container {
+	position: relative !important;
+	top:auto !important;
+	z-index: 1;
+	overflow: hidden;
+	display: none;
+}
+
+.ms-default {
+	position: relative !important;
+	top:auto !important;
+	z-index: 2;
+	overflow: hidden;
+	display: block;
+}

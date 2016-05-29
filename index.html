@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html ng-app="chatApp">
+  <head>
+    <title>Application Chat</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,height=device-height,  initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/multi-screen-css.css">
+   
+    <div class="titlebar col-md-12 col-sm-12 col-xs-12">
+      <div class="atas"> Chat Application </div>
+    </div>
+  </head>
+  <body>
+  <div class="container" ng-controller="AppCtrl">
+    
+
+  <div class="col-md-12 col-sm-12 col-xs- 12"> 
+    <div class= "row">
+    <div class ="col-md-2 col-sm-2 col-xs-2"></div>
+    <div class ="col-md-8 col-sm-8 col-xs-8">
+      <div class="titleLogin">
+        <p class="textlog">
+          Login
+        </p>
+        <input class ="inputlog" ng-model="lgn.email" type="text" id="email" placeholder ="Email"><br>
+        <input class ="inputlog" ng-model="lgn.password" type="password" id="password" placeholder="Password"><br>
+        <div class="btnlog">
+          <button href="/chat" class="button" ng-click="login()" data-ms-target="page2" data-ms-exit-animation="left" data-ms-enter-animation="left">Login</button>
+        </div><br>
+        <hr>
+      </div>
+    </div>
+    <div class ="col-md-2 col-sm-2 col-xs-2"></div>
+
+    <div class="col-md-12 col-sm-12 col-xs-12"> 
+    <div class ="col-md-2 col-sm-2 col-xs-2"></div>
+    <div class ="col-md-8 col-sm-8 col-xs-8">
+      <div class="titleLogin">
+        <p class="textreg">
+          Register
+        </p>
+        <input class ="inputlog" ng-model="reg.email" type="text" id="emailreg" placeholder ="Email"><br>
+        <input class ="inputlog" ng-model="reg.name" type="text" id="userName" placeholder ="Name"><br>
+        <input class ="inputlog" ng-model="reg.password" type="password" id="passwordreg" placeholder="Password"><br>
+        <div class="btnlog">
+          <button class="button" ng-click="register()" >Register</button>
+        </div><br>
+      </div>
+    </div>
+    <div class ="col-md-2 col-sm-2 col-xs-2"></div>
+  </div>
+  </div>
+</div>
+</div>
+  
+
+  <div class= "row box">
+    <div id = "page2" class="ms-container ms-default col-md-12 col-sm-12 col-xs-12">
+      <ul id="messages"></ul>
+      <form action="">
+        <input id="m" autocomplete="off"/>
+      </form>
+
+      <script src="/socket.io/socket.io.js">
+        var socket = io();
+        $('form').submit(function(){
+          socket.emit('chat message', $('#m').val());
+        $('#m').val('');
+          return false;
+        });
+        socket.on('chat message', function(msg){
+        $('#messages').append($('<li>').text(msg));
+        });
+      </script>
+    </div>
+  </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-route.min.js"></script> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script src="css/js/viewportSize.js"></script>
+    <script src="js/btnvalidation.js"></script>
+  
+  </body>
+</html>

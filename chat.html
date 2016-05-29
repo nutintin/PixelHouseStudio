@@ -1,0 +1,64 @@
+<!--<!doctype html>
+<html>
+  <head>
+    <title>Socket.IO chat</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  </head>
+  <body>
+
+    <ul id="messages"></ul>
+    <form action="">-->
+      <!--<input class ="nninput" name="nickname" placeholder="nickname" autocomplete="off" />-->
+<!--      <input id="m" name ="m" placeholder="message" autocomplete="off" />
+    </form>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+    <script>
+  var socket = io('/my-namespace');
+  $('form').submit(function(){
+    socket.emit('chat message', $('#m').val());
+    $('#m').val('');
+    return false;
+  });
+  socket.on('chat message', function(msg){
+    $('#messages').append($('<li>').text(msg));
+  });
+  /*socket.on("chat message", function(who, msg){  
+
+    $("#messages").append("<li><strong><span class='text-success'>" + who + "</span></strong> says: " + msg + "</li>");
+});*/
+
+</script>
+  </body>
+</html>-->
+ 
+
+ <!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Socket.IO Chat Example</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <ul class="pages">
+    <li class="chat page">
+      <div class="chatArea">
+        <ul class="messages"></ul>
+      </div>
+      <input class="inputMessage" placeholder="Type here..."/>
+    </li>
+    <li class="login page">
+      <div class="form">
+        <h3 class="title">What's your nickname?</h3>
+        <input class="usernameInput" type="text" maxlength="14" />
+      </div>
+    </li>
+  </ul>
+
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

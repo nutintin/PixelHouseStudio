@@ -1,0 +1,32 @@
+{
+  "name": "PixelHouseStudio",
+  "version": "1.0.0",
+  "description": "PixelHouseStudioProjectTest",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nutintin/PixelHouseStudio.git"
+  },
+  "dependencies":{
+    "express":"*",
+    "body-parser":"*",
+    "mongoose":"*",
+    "ejs": "^1.0.0"
+    "socket.io":"*",
+    "mongojs":"*",
+    "mongodb":"*"
+  },
+  "author": "RLK",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nutintin/PixelHouseStudio/issues"
+  },
+  "homepage": "https://github.com/nutintin/PixelHouseStudio",
+  "dependencies": {
+    "express": "^4.13.4",
+    "socket.io": "^1.4.6"
+  }
+}
